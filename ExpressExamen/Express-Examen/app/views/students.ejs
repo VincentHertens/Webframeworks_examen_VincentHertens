@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="/" method="POST">
+        <input type="text" placeholder="naam" name="naam"><br/>
+        <input type="date" placeholder="geboortedatum" name="geboortedatum"><br/>
+        <input type="text" placeholder="studierichting" name="studierichting"><br/>
+        <button type="submit">Toevoegen</button></br>
+    </form>
+
 
     <h1>Alle studenten:</h1>
     <% studenten.forEach(student => { %> 
