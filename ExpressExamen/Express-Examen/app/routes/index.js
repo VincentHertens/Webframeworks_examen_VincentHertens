@@ -18,9 +18,16 @@ router.get('/', (req, res) => {
 })
 
 /* TOEVOEGEN */
-router.post('/',(req, res) =>{ 
-    db.collection('students').insertOne(req.body);
-     res.redirect('/');  
+router.post('/',(req, res) =>{
+  db.collection('students').findOne(req.body,(err, result) =>{
+    if(result){
+      res.redirect('/');
+    }
+    else{
+      db.collection('students').insertOne(req.body);
+      res.redirect('/');
+    }
+  })
 })
 
 module.exports = router;
